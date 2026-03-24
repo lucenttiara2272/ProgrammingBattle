@@ -1,0 +1,15 @@
+{
+  "name": "week_10_assignemnt",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env sources/main.mjs"
+  },
+  "dependencies": {
+    "jest": "^30.3.0"
+  }
+}
