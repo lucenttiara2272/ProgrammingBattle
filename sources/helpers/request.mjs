@@ -1,5 +1,5 @@
 // basic helper function to make a request to the server and return the response as json
-async function makeRequest(url, method="GET", token="", payload=null) {
+async function makeRequest(url, method="POST", token="", payload=null) {
     let data = {};
     const headers = {
         method:method,
