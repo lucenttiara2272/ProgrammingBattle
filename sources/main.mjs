@@ -1,7 +1,6 @@
-import makeRequest from "./helpers/request.mjs";
+import {makeRequest, createGroup} from "./helpers/request.mjs";
 
 import { error } from "node:console";
-
 
 //#region API URLS
 const baseURL = 'https://batlearena.onrender.com';
@@ -20,17 +19,19 @@ const userConfig = {
     "password": password,
 }
 
-let token = process.env.TOKEN;
+let token = "";
 
 // setup th team
-if (!token) {
-    let response = await makeRequest(`${regTeamURL}`, "POST", "", userConfig);
+if (token === "") {
+    let response = await createGroup(`${regTeamURL}`, "POST", userConfig);
     // result
     console.log(response);
     token = response.token;
+    console.log("Token:", token);
 }
 
 
 // start a match
-response = await makeRequest(`${matchURL}`, "POST", token);
-console.log(response);
+// console.log(`Starting match...`);
+// response = await makeRequest(`${matchURL}`, "POST", token);
+// console.log(response);
